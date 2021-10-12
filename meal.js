@@ -15,6 +15,10 @@ const getFood=()=>{
  
 }
 
+const spinner=(id,dis)=>{
+  document.getElementById(id).style.display=dis;
+}
+
 const displayData=data=>{
   
     const foodList=document.getElementById("foodList")

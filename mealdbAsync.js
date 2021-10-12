@@ -1,10 +1,19 @@
+const spinner=(id,dis)=>{
+  document.getElementById(id).style.display=dis;
+}
+
 const getFood=()=>{
     const searchText= document.getElementById("searchText")
     if(searchText.value=='')
     {
-  
+      const div=document.getElementById("foodList")
+      div.innerHTML=`
+      <p class="fs-4 fw-bold text-danger mx-auto">Please Enter your Food</p>`
     }
     else{
+      const foodList=document.getElementById("foodList")
+      foodList.textContent="";
+      spinner("spinner","block")
       const url=`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText.value}`
       fetch(url) 
       .then(response=>response.json())
@@ -14,10 +23,13 @@ const getFood=()=>{
    
   }
   
+  
+
   const displayData=data=>{
     
       const foodList=document.getElementById("foodList")
       foodList.textContent="";
+      console.log(data.meals.length);
       if (data.meals.length==0)
       {
         const div=document.createElement("div")
@@ -40,6 +52,8 @@ const getFood=()=>{
           foodList.appendChild(div)
        });
       }
+      spinner("spinner","none")
+      
      
   }
   

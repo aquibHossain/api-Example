@@ -11,8 +11,11 @@
 <body>
     <h1 class="text-center fs-1 fw-bold text-success mt-5">Search Your Food</h1>
     <div class="input-group mb-3 mt-5 w-25 mx-auto">
-        <input id="searchText" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <input id="searchText" type="text" class="form-control" placeholder="Your Food" aria-label="Recipient's username" aria-describedby="button-addon2">
         <button onclick="getFood()" class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+      </div>
+      <div id="spinner" class="spinner-border text-success mx-auto mt-5" role="status">
+        <span class="visually-hidden">Loading...</span>
       </div>
       <div id="show">
    
